@@ -1,14 +1,14 @@
 FROM node:carbon-slim
 
 # Create app directory
-WORKDIR /git/academy-api
+WORKDIR /git/picaditos-api
 
 # Install app dependencies
-COPY package.json /git/academy-api/
+COPY package.json /git/picaditos-api/
 RUN npm install
 
 # Bundle app source
-COPY . /git/academy-api/
+COPY . /git/picaditos-api/
 RUN npm run prepublish
 
 CMD [ "npm", "run", "runServer" ]
