@@ -1,0 +1,76 @@
+========================== LOGIN ===================================
+
+// create user
+
+mutation{
+  createUser(user:{
+    name:"john",
+    lastname:"doe",
+    email:"as11@unal.edu.co",
+    picture: "asd",
+    phone:"3153495394",
+    username:"jdoe",
+    password:"12345678",
+    password_confirmation: "12345678"
+  }){
+    name
+  }
+}
+
+// log in
+
+mutation{
+  signIn(
+     email:"as11@unal.edu.co",
+     password:"12345678"
+  ){
+     name
+    token
+    client
+  }
+}
+
+// user by id
+
+query{
+  userById(id:1){
+    username
+    name
+    lastname
+  }
+}
+
+// all users
+
+query {
+  allUsers {
+    email
+  }
+}
+
+// validate token
+
+query{
+  validate_token(
+    token:"xwcswJKaduh0BxMi8UtPaQ"
+    client:"ikqb09sMQjeH0w9Uighv7w"
+    uid:"as11@unal.edu.co"
+  ){
+    success
+  }
+}
+
+// log out
+
+mutation{
+  signOut(
+    token:"3HVnXZAitOHpqu80zUjPYg"
+    client:"AyLoia9DFFKfqAfmidVB8A"
+    uid:"as11@unal.edu.co"
+  ){
+    success
+  }
+}
+
+
+================================== otro ms ==============================
