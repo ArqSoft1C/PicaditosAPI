@@ -11,5 +11,8 @@ services:
       LOGIN_URL: '192.168.99.101'
       LOGIN_PORT: '4001'
       LOGIN_ENTRY: 'auth/'
+      MATCHES_URL: '192.168.99.101'
+      MATCHES_PORT: '4004'
+      MATCHES_ENTRY: 'api/matches'
     ports:
       - '5000:5000'
