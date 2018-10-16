@@ -8,20 +8,28 @@ import {
 	equiposQueries,
 	equiposTypeDef
 } from './courses/typeDefs';
+import {
+	matchesMutations,
+	matchesQueries,
+	matchesTypeDef
+} from './matches/typeDefs';
 
 import equiposResolvers from './courses/resolvers';
-
+import matchesResolvers from './matches/resolvers';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		equiposTypeDef
+		equiposTypeDef,
+		matchesTypeDef
 	],
 	[
-		equiposQueries
+		equiposQueries,
+		matchesQueries
 	],
 	[
-		equiposMutations
+		equiposMutations,
+		matchesMutations
 	]
 );
 
@@ -30,6 +38,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		equiposResolvers
+		equiposResolvers,
+		matchesResolvers
 	)
 });

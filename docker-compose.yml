@@ -8,5 +8,8 @@ services:
       TEAMS_URL: '192.168.99.102'
       TEAMS_PORT: '4002'
       TEAMS_ENTRY: 'equipos'
+      MATCHES_URL: '192.168.99.101'
+      MATCHES_PORT: '4004'
+      MATCHES_ENTRY: 'api/matches'
     ports:
       - '5000:5000'
