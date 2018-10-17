@@ -5,17 +5,17 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allMatches: (_) =>
+		allCourts: (_) =>
 			getRequest(URL, ''),
-		matchById: (_, { id }) =>
+		courtById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createMatch: (_, { match }) =>
-			generalRequest(`${URL}`, 'POST', {match:match}),
-		updateMatch: (_, { id, match }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', {match:match}),
-		deleteMatch: (_, { id }) =>
+		createCourt: (_, { court }) =>
+			generalRequest(`${URL}`, 'POST', {court:court}),
+		updateCourt: (_, { id, court }) =>
+			generalRequest(`${URL}/${id}`, 'PUT', {court:court}),
+		deleteCourt: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}
 };

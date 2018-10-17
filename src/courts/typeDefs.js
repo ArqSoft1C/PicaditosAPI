@@ -1,31 +1,29 @@
-export const matchesTypeDef = `
-type Match {
+export const courtsTypeDef = `
+type Court {
     id: Int!
-    court_id: Int!
-    team_home_id: String!
-    team_away_id: String!
-    score_home: Int!
-    score_away: Int!
-    played: Boolean!
-    date: String!
+    name: String!
+    latitude: Float!
+    longitude: Float!
+    address: String!
+    availability: Boolean!
+    price: Int!
 }
-input MatchInput {
-    court_id: Int!
-    team_home_id: String!
-    team_away_id: String!
-    score_home: Int
-    score_away: Int
-    played: Boolean
-    date: String!
+input CourtInput {
+    name: String!
+    latitude: Float!
+    longitude: Float!
+    address: String!
+    availability: Boolean!
+    price: Int!
 }`;
 
-export const matchesQueries = `
-    allMatches: [Match]!
-    matchById(id: Int!): Match!
+export const courtsQueries = `
+    allCourts: [Court]!
+    courtById(id: Int!): Court!
 `;
 
-export const matchesMutations = `
-    createMatch(match: MatchInput!): Match!
-    deleteMatch(id: Int!): String
-    updateMatch(id: Int!, match: MatchInput!): Match!
+export const courtsMutations = `
+    createCourt(court: CourtInput!): Court!
+    deleteCourt(id: Int!): String
+    updateCourt(id: Int!, court: CourtInput!): Court!
 `;

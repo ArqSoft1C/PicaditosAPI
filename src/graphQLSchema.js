@@ -3,6 +3,7 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 
 import { mergeSchemas } from './utilities';
+
 import {
 	equiposMutations,
 	equiposQueries,
@@ -15,33 +16,45 @@ loginQueries,
 loginTypeDef
 } from './login/typeDefs';
 
-import equiposResolvers from './courses/resolvers';
-import loginResolvers from './login/resolvers';
 import {
 	matchesMutations,
 	matchesQueries,
 	matchesTypeDef
 } from './matches/typeDefs';
 
+import {
+	courtsMutations,
+	courtsQueries,
+	courtsTypeDef
+} from './courts/typeDefs';
+
+
 import equiposResolvers from './courses/resolvers';
+import loginResolvers from './login/resolvers';
 import matchesResolvers from './matches/resolvers';
+import courtsResolvers from './courts/resolvers';
+
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		equiposTypeDef,
 		loginTypeDef,
-		matchesTypeDef
+		matchesTypeDef,
+		courtsTypeDef
 	],
 	[
 		equiposQueries,
 		loginQueries,
-		matchesQueries
+		matchesQueries,
+		courtsQueries
 	],
 	[
 		equiposMutations,
 		loginMutations,
-		matchesMutations
+		matchesMutations,
+		courtsMutations
 	]
 );
 
@@ -52,6 +65,7 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		equiposResolvers,
 		loginResolvers,
-		matchesResolvers
+		matchesResolvers,
+		courtsResolvers
 	)
 });

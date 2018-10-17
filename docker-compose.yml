@@ -14,5 +14,8 @@ services:
       MATCHES_URL: '192.168.99.101'
       MATCHES_PORT: '4004'
       MATCHES_ENTRY: 'api/matches'
+      COURTS_URL: '192.168.99.102'
+      COURTS_PORT: '4005'
+      COURTS_ENTRY: 'courts'
     ports:
       - '5000:5000'
