@@ -2,13 +2,11 @@ export const equiposTypeDef = `
 type Equipo {
     id: String!
     nombre: String!
-    deporte: String!
     capitan_un: String!
     miembros: [String]
 }
 input EquipoInput {
     nombre: String!
-    deporte: String!
     capitan_un: String!
     miembros: [String]
 }`;

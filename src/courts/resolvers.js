@@ -12,9 +12,9 @@ const resolvers = {
 	},
 	Mutation: {
 		createCourt: (_, { court }) =>
-			generalRequest(`${URL}`, 'POST', {court:court}),
+			generalRequest(`${URL}`, 'POST', court),
 		updateCourt: (_, { id, court }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', {court:court}),
+			generalRequest(`${URL}/${id}`, 'PUT', court),
 		deleteCourt: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}

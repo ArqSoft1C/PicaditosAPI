@@ -1,6 +1,6 @@
 export const messagesTypeDef = `
 type Message {
-    id: String!
+    ID: String!
     user1: String!
     user2: String!
     subject: String!
