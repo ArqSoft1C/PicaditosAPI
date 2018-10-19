@@ -6,7 +6,7 @@ type Court {
     longitude: Float!
     address: String!
     availability: Boolean!
-    price: Int!
+    price_hour: Int!
 }
 input CourtInput {
     name: String!
@@ -14,7 +14,7 @@ input CourtInput {
     longitude: Float!
     address: String!
     availability: Boolean!
-    price: Int!
+    price_hour: Int!
 }`;
 
 export const courtsQueries = `
