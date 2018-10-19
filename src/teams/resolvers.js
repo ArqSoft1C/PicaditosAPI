@@ -5,17 +5,17 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allEquipos: (_) =>
+		allTeams: (_) =>
 			getRequest(URL, ''),
-		equipoById: (_, { id }) =>
+		teamById: (_, { id }) =>
 			generalRequest(`${URL}/${id}/`, 'GET'),
 	},
 	Mutation: {
-		createEquipo: (_, { equipo }) =>
+		createTeam: (_, { equipo }) =>
 			generalRequest(`${URL}/`, 'POST', equipo),
-		updateEquipo: (_, { id, equipo }) =>
+		updateTeam: (_, { id, equipo }) =>
 			generalRequest(`${URL}/${id}/`, 'PUT', equipo),
-		deleteEquipo: (_, { id }) =>
+		deleteTeam: (_, { id }) =>
 			generalRequest(`${URL}/${id}/`, 'DELETE')
 	}
 };
