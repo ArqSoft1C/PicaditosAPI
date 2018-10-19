@@ -9,6 +9,11 @@ const resolvers = {
 			getRequest(URL, ''),
 		equipoById: (_, { id }) =>
 			generalRequest(`${URL}/${id}/`, 'GET'),
+		equipoByPlayer: (_, {player_name}) =>
+			getRequest(URL, '').then((teamResponse) => {
+				let teams = teamResponse.filter(team => team.miembros.includes(player_name));
+				return teams;
+			}),
 	},
 	Mutation: {
 		createEquipo: (_, { equipo }) =>

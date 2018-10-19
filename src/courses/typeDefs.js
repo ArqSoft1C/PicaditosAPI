@@ -14,6 +14,7 @@ input EquipoInput {
 export const equiposQueries = `
     allEquipos: [Equipo]!
     equipoById(id: String!): Equipo!
+    equipoByPlayer(player_name: String!): [Equipo]!
 `;
 
 export const equiposMutations = `
