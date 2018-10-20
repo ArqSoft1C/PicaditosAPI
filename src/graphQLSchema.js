@@ -3,6 +3,7 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 
 import { mergeSchemas } from './utilities';
+
 import {
 	equiposMutations,
 	equiposQueries,
@@ -10,38 +11,59 @@ import {
 } from './courses/typeDefs';
 
 import {
-loginMutations,
-loginQueries,
-loginTypeDef
+	loginMutations,
+	loginQueries,
+	loginTypeDef
 } from './login/typeDefs';
 
-import equiposResolvers from './courses/resolvers';
-import loginResolvers from './login/resolvers';
 import {
 	matchesMutations,
 	matchesQueries,
 	matchesTypeDef
 } from './matches/typeDefs';
 
+import {
+	courtsMutations,
+	courtsQueries,
+	courtsTypeDef
+} from './courts/typeDefs';
+
+import {
+	messagesMutations,
+	messagesQueries,
+	messagesTypeDef
+} from './messages/typeDefs';
+
 import equiposResolvers from './courses/resolvers';
+import loginResolvers from './login/resolvers';
 import matchesResolvers from './matches/resolvers';
+import courtsResolvers from './courts/resolvers';
+import messagesResolvers from './messages/resolvers';
+
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		equiposTypeDef,
 		loginTypeDef,
-		matchesTypeDef
+		matchesTypeDef,
+		courtsTypeDef,
+		messagesTypeDef
 	],
 	[
 		equiposQueries,
 		loginQueries,
-		matchesQueries
+		matchesQueries,
+		courtsQueries,
+		messagesQueries
 	],
 	[
 		equiposMutations,
 		loginMutations,
-		matchesMutations
+		matchesMutations,
+		courtsMutations,
+		messagesMutations
 	]
 );
 
@@ -52,6 +74,8 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		equiposResolvers,
 		loginResolvers,
-		matchesResolvers
+		matchesResolvers,
+		courtsResolvers,
+		messagesResolvers
 	)
 });
