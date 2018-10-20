@@ -1,0 +1,118 @@
+query ValidateTokenQuery(
+    $token: String!
+    $client: String!
+    $uid: String!
+){
+  validate_token(
+    token: $token,
+    client: $client,
+    uid: $uid
+  ){
+    success
+  }
+}
+
+///////////////////////////
+///////////////////////////
+///////////////////////////
+
+query UserByIdQuery(
+    $id: Int!
+){
+  userById(
+  id:$id
+  ){
+    name
+    lastname
+    email
+  }
+}
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
+
+mutation SignOutMutation(
+    $token: String!
+    $client: String!
+    $uid: String!
+){
+  signOut(
+    token: $token,
+    client: $client,
+    uid: $uid
+  ){
+    success
+  }
+}
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
+
+mutation LoginMutation(
+  $email: String!
+  $password: String!
+  ){
+  signIn(
+     email: $email,
+     password: $password
+  ){
+     id
+     name
+     username
+     lastname
+     picture
+     phone
+     token
+     client
+     uid
+     email
+  }
+}
+
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
+
+query getAllUsers{
+  allUsers {
+    email
+  }
+}
+
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
+
+
+mutation CreateUserMutation(
+    $name: String!
+    $lastname: String!
+    $username: String!
+    $phone: String!
+    $picture: String!
+    $email: String!
+    $password: String!
+    $password_confirmation: String!
+  ){
+  createUser(user:{
+    name: $name
+    lastname: $lastname
+    username: $username
+    phone: $phone
+    picture: $picture
+    email: $email
+    password: $password
+    password_confirmation: $password_confirmation
+  }) {
+    email
+  }
+}
+
+
+////////////////////////////
+////////////////////////////
+////////////////////////////
