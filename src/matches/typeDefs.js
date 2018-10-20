@@ -22,6 +22,7 @@ input MatchInput {
 export const matchesQueries = `
     allMatches: [Match]!
     matchById(id: Int!): Match!
+    matchByTeam(team: String!): [Match]!
 `;
 
 export const matchesMutations = `
