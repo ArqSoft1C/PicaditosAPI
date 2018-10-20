@@ -11,10 +11,10 @@ const resolvers = {
 			generalRequest(`${URL}/${id}/`, 'GET'),
 	},
 	Mutation: {
-		createTeam: (_, { equipo }) =>
-			generalRequest(`${URL}/`, 'POST', equipo),
-		updateTeam: (_, { id, equipo }) =>
-			generalRequest(`${URL}/${id}/`, 'PUT', equipo),
+		createTeam: (_, { team }) =>
+			generalRequest(`${URL}/`, 'POST', team),
+		updateTeam: (_, { id, team }) =>
+			generalRequest(`${URL}/${id}/`, 'PUT', team),
 		deleteTeam: (_, { id }) =>
 			generalRequest(`${URL}/${id}/`, 'DELETE')
 	}

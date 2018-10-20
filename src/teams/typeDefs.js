@@ -1,16 +1,16 @@
-teamexport const teamsTypeDef = `
+export const teamsTypeDef = `
 type Team {
     id: String!
-    nombre: String!
-    deporte: String!
-    capitan_un: String!
-    miembros: [String]
+    name: String!
+    sport: String!
+    captain: String!
+    squad: [String]
 }
 input TeamInput {
-    nombre: String!
-    deporte: String!
-    capitan_un: String!
-    miembros: [String]
+    name: String!
+    sport: String!
+    captain: String!
+    squad: [String]
 }`;
 
 export const teamsQueries = `
