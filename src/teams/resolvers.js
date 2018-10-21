@@ -16,7 +16,7 @@ const resolvers = {
 			}),
 		openTeams: (_) =>
 			getRequest(URL, '').then((teamResponse) => {
-				let teams = teamResponse.filter(team => team.squad.length <= 11 );
+				let teams = teamResponse.filter(team => team.squad.length < 11 );
 				return teams;
 			}),
 	},
