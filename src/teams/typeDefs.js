@@ -24,4 +24,5 @@ export const teamsMutations = `
     createTeam(team: TeamInput!): Team!
     deleteTeam(id: String!): String
     updateTeam(id: String!, team: TeamInput!): Team!
+    addPlayerToTeam(id: String!, player_name: String!): Team!
 `;

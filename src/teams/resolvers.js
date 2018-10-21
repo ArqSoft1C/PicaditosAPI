@@ -26,7 +26,12 @@ const resolvers = {
 		updateTeam: (_, { id, team }) =>
 			generalRequest(`${URL}/${id}/`, 'PUT', team),
 		deleteTeam: (_, { id }) =>
-			generalRequest(`${URL}/${id}/`, 'DELETE')
+			generalRequest(`${URL}/${id}/`, 'DELETE'),
+		addPlayerToTeam: (_, { id, player_name }) =>
+			generalRequest(`${URL}/${id}/`, 'GET').then((teamResponse) => {
+				teamResponse.squad.push(player_name)
+				return generalRequest(`${URL}/${id}/`, 'PUT', teamResponse)
+			}),
 	}
 };
 
