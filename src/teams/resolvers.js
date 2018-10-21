@@ -14,6 +14,11 @@ const resolvers = {
 				let teams = teamResponse.filter(team => team.squad.includes(player_name));
 				return teams;
 			}),
+		openTeams: (_) =>
+			getRequest(URL, '').then((teamResponse) => {
+				let teams = teamResponse.filter(team => team.squad.length <= 11 );
+				return teams;
+			}),
 	},
 	Mutation: {
 		createTeam: (_, { team }) =>

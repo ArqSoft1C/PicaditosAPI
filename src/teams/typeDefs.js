@@ -17,6 +17,7 @@ export const teamsQueries = `
     allTeams: [Team]!
     teamById(id: String!): Team!
     teamByPlayer(player_name: String!): [Team]!
+    openTeams: [Team]!
 `;
 
 export const teamsMutations = `
