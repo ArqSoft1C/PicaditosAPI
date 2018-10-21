@@ -17,6 +17,15 @@ input MatchInput {
     score_away: Int
     played: Boolean
     date: String!
+}
+input MatchUpdateInput {
+    court_id: Int
+    team_home_id: String
+    team_away_id: String
+    score_home: Int
+    score_away: Int
+    played: Boolean
+    date: String
 }`;
 
 export const matchesQueries = `
@@ -29,5 +38,5 @@ export const matchesQueries = `
 export const matchesMutations = `
     createMatch(match: MatchInput!): Match!
     deleteMatch(id: Int!): String
-    updateMatch(id: Int!, match: MatchInput!): Match!
+    updateMatch(id: Int!, match: MatchUpdateInput!): Match!
 `;
