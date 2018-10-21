@@ -14,6 +14,11 @@ const resolvers = {
 				let matches = matchResponse.filter( match => (match.team_home_id === team) || (match.team_away_id === team))
 				return matches;
 			}),
+		openMatches: (_) => 
+		getRequest(URL, '').then((matchResponse) => {
+			let matches = matchResponse.filter( match => match.team_away_id === null)
+			return matches;
+		}),
 
 	},
 	Mutation: {
