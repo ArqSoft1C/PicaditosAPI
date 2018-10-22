@@ -19,7 +19,7 @@ const resolvers = {
 		createMessage: (_, { message }) =>
 			generalRequest(`${URL}`, 'POST', message),
 		//updateCourse: (_, { code, course }) =>
-		//	generalRequest(`${URL}/${code}`, 'PUT', course),
+		//generalRequest(`${URL}/${code}`, 'PUT', course),
 		deleteMessage: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'DELETE')
 	}
