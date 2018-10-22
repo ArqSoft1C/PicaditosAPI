@@ -15,6 +15,7 @@ input MessageInput {
 
 export const messagesQueries = `
     allMessages: [Message]!
+    messageByReceptor(username: String!): [Message]!
 `;
     //courseByCode(code: Int!): Course!
 

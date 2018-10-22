@@ -9,6 +9,11 @@ const resolvers = {
 			generalRequest(URL,'GET'),
 		//messageByCode: (_, { code }) =>
 		//	generalRequest(`${URL}/${code}`, 'GET'),
+		messageByReceptor: (_, {username}) => 
+			generalRequest(URL,'GET').then((messResponse) => {
+				let messages = messResponse.filter( message =>	message.user2 == username)
+				return messages;
+			}),
 	},
 	Mutation: {
 		createMessage: (_, { message }) =>
