@@ -14,6 +14,11 @@ const resolvers = {
 				let teams = teamResponse.filter(team => team.squad.includes(player_name));
 				return teams;
 			}),
+		teamByCaptain: (_, {captain_name}) =>
+			getRequest(URL, '').then((teamResponse) => {
+				let teams = teamResponse.filter(team => team.captain == captain_name);
+				return teams;
+			}),
 		openTeams: (_) =>
 			getRequest(URL, '').then((teamResponse) => {
 				let teams = teamResponse.filter(team => team.squad.length < 11 );
