@@ -14,6 +14,11 @@ const resolvers = {
 				let messages = messResponse.filter( message =>	message.user2 == username)
 				return messages;
 			}),
+		messageByUser: (_, {username}) => 
+		generalRequest(URL,'GET').then((messResponse) => {
+			let messages = messResponse.filter( message =>	(message.user1 == username) || (message.user2 == username))
+			return messages;
+		}),
 	},
 	Mutation: {
 		createMessage: (_, { message }) =>
