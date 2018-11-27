@@ -7,6 +7,7 @@ services:
       SHOW_URLS: 'true'
       TEAMS_URL: '192.168.99.101'
       TEAMS_PORT: '4002'
+<<<<<<< HEAD
       TEAMS_ENTRY: 'equipos'
       LOGIN_URL: '192.168.99.101'
       LOGIN_PORT: '4001'
@@ -17,6 +18,22 @@ services:
       COURTS_URL: '192.168.99.101'
       COURTS_PORT: '4005'
       COURTS_ENTRY: 'courts'
+=======
+      TEAMS_ENTRY: 'teams'
+
+      LOGIN_URL: '192.168.99.101'
+      LOGIN_PORT: '4001'
+      LOGIN_ENTRY: 'auth/'
+
+      MATCHES_URL: '192.168.99.101'
+      MATCHES_PORT: '4004'
+      MATCHES_ENTRY: 'api/matches'
+
+      COURTS_URL: '192.168.99.101'
+      COURTS_PORT: '4005'
+      COURTS_ENTRY: 'courts'
+
+>>>>>>> test
       MESSAGES_URL: '192.168.99.101'
       MESSAGES_PORT: '4003'
       MESSAGES_ENTRY: 'message'

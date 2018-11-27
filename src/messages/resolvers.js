@@ -9,12 +9,22 @@ const resolvers = {
 			generalRequest(URL,'GET'),
 		//messageByCode: (_, { code }) =>
 		//	generalRequest(`${URL}/${code}`, 'GET'),
+		messageByReceptor: (_, {username}) => 
+			generalRequest(URL,'GET').then((messResponse) => {
+				let messages = messResponse.filter( message =>	message.user2 == username)
+				return messages;
+			}),
+		messageByUser: (_, {username}) => 
+		generalRequest(URL,'GET').then((messResponse) => {
+			let messages = messResponse.filter( message =>	(message.user1 == username) || (message.user2 == username))
+			return messages;
+		}),
 	},
 	Mutation: {
 		createMessage: (_, { message }) =>
 			generalRequest(`${URL}`, 'POST', message),
 		//updateCourse: (_, { code, course }) =>
-		//	generalRequest(`${URL}/${code}`, 'PUT', course),
+		//generalRequest(`${URL}/${code}`, 'PUT', course),
 		deleteMessage: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'DELETE')
 	}
