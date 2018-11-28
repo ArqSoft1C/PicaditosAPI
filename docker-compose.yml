@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-  picaditosapi:
+  picaditos-api:
     build: .
     environment:
       PORT: '5000'
