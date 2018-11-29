@@ -13,6 +13,11 @@ const app = new Koa();
 const router = new KoaRouter();
 const PORT = process.env.PORT || 5000;
 
+const koaOptions = {
+	origin: true,
+	credentials: true
+}
+
 app.use(koaLogger());
 app.use(koaCors());
 
