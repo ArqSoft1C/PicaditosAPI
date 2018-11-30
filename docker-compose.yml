@@ -24,5 +24,10 @@ services:
       MESSAGES_URL: '192.168.99.101'
       MESSAGES_PORT: '4003'
       MESSAGES_ENTRY: 'message'
+
+      AUTH_URL: '192.168.99.101'
+      AUTH_PORT: '4001'
+      AUTH_ENTRY: 'ldap/'
+
     ports:
       - '5000:5000'
