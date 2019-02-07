@@ -17,11 +17,6 @@ import {
 } from './login/typeDefs';
 
 import {
-	authMutations,
-	authTypeDef
-} from './auth/typeDefs';
-
-import {
 	matchesMutations,
 	matchesQueries,
 	matchesTypeDef
@@ -44,7 +39,7 @@ import loginResolvers from './login/resolvers';
 import matchesResolvers from './matches/resolvers';
 import courtsResolvers from './courts/resolvers';
 import messagesResolvers from './messages/resolvers';
-import authResolvers from './auth/resolvers';
+
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -54,8 +49,7 @@ const mergedTypeDefs = mergeSchemas(
 		loginTypeDef,
 		matchesTypeDef,
 		courtsTypeDef,
-		messagesTypeDef,
-	  authTypeDef
+		messagesTypeDef
 	],
 	[
 		teamsQueries,
@@ -69,8 +63,7 @@ const mergedTypeDefs = mergeSchemas(
 		loginMutations,
 		matchesMutations,
 		courtsMutations,
-		messagesMutations,
-		authMutations
+		messagesMutations
 	]
 );
 
@@ -83,7 +76,6 @@ export default makeExecutableSchema({
 		loginResolvers,
 		matchesResolvers,
 		courtsResolvers,
-		messagesResolvers,
-		authResolvers
+		messagesResolvers
 	)
 });
