@@ -1,6 +1,8 @@
 version: '2.1'
 services:
   picaditos-api:
+    depends_on:
+      - picaditos-web 
     build: .
     environment:
       PORT: '5000'
